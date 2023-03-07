@@ -22,14 +22,32 @@ export default function App() {
 		setNotes((prevNotes) => [newNote, ...prevNotes]);
 		setCurrentNoteId(newNote.id);
 	}
-
+	// rearranges the notes array
+	//
 	function updateNote(text) {
-		setNotes((oldNotes) =>
-			oldNotes.map((oldNote) => {
-				return oldNote.id === currentNoteId ? { ...oldNote, body: text } : oldNote;
-			})
-		);
+		setNotes((oldNotes) => {
+			let newArray = [];
+			oldNotes.forEach((oldNote) => {
+				console.log(currentNoteId);
+				console.log(oldNote);
+				if (oldNote.id === currentNoteId) {
+					newArray.unshift({ ...oldNote, body: text });
+				} else {
+					newArray.push(oldNote);
+				}
+			});
+			return newArray;
+		});
 	}
+	// doesent rearrange the notes
+	//
+	// function updateNote(text) {
+	// 	setNotes((oldNotes) =>
+	// 		oldNotes.map((oldNote) => {
+	// 			return oldNote.id === currentNoteId ? { ...oldNote, body: text } : oldNote;
+	// 		})
+	// 	);
+	// }
 
 	function findCurrentNote() {
 		return (
