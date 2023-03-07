@@ -11,4 +11,4 @@
 
 - lazy state initialisation
 - using localStorage in React
--
+- array manipulation
