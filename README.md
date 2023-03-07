@@ -6,3 +6,9 @@
 - add note summary titles
 - move modified notes to the top
 - delete notes
+
+### what i learned about
+
+- lazy state initialisation
+- using localStorage in React
+-
