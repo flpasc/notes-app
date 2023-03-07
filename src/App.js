@@ -22,8 +22,7 @@ export default function App() {
 		setNotes((prevNotes) => [newNote, ...prevNotes]);
 		setCurrentNoteId(newNote.id);
 	}
-	// rearranges the notes array
-	//
+	// Puts most recenttly-edited to the top
 	function updateNote(text) {
 		setNotes((oldNotes) => {
 			let newArray = [];
@@ -39,15 +38,6 @@ export default function App() {
 			return newArray;
 		});
 	}
-	// doesent rearrange the notes
-	//
-	// function updateNote(text) {
-	// 	setNotes((oldNotes) =>
-	// 		oldNotes.map((oldNote) => {
-	// 			return oldNote.id === currentNoteId ? { ...oldNote, body: text } : oldNote;
-	// 		})
-	// 	);
-	// }
 
 	function findCurrentNote() {
 		return (
